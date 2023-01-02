@@ -1,0 +1,5644 @@
+[
+  {
+    p {
+start {
+identity 9,
+labels [
+          Car
+        ],
+properties {
+Year 2004,
+Model ES330,
+type Car,
+Name Lexus
+        }
+      },
+end {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+segments [
+        {
+          start {
+identity 9,
+labels [
+              Car
+            ],
+properties {
+Year 2004,
+Model ES330,
+type Car,
+Name Lexus
+            }
+          },
+          relationship {
+identity 0,
+start 9,
+end 10,
+type Misfire,
+properties {
+name Misfire
+            }
+          },
+          end {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+end {
+identity 11,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap upstream O2 sensors, L&R.  Do misfire locations change banks
+        }
+      },
+segments [
+        {
+          start {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          },
+          relationship {
+identity 1,
+start 10,
+end 11,
+type Yes,
+properties {
+name Yes
+            }
+          },
+          end {
+identity 11,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap upstream O2 sensors, L&R.  Do misfire locations change banks
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+end {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+segments [
+        {
+          start {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          },
+          relationship {
+identity 2,
+start 10,
+end 12,
+type No,
+properties {
+name No
+            }
+          },
+          end {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+end {
+identity 0,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Piston Ring,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          },
+          relationship {
+identity 3,
+start 10,
+end 0,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 0,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Piston Ring,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+end {
+identity 1,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Valvetrain,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          },
+          relationship {
+identity 4,
+start 10,
+end 1,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 1,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Valvetrain,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+end {
+identity 2,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Fuel Injector,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          },
+          relationship {
+identity 5,
+start 10,
+end 2,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 2,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Fuel Injector,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+end {
+identity 4,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Spark Plug,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          },
+          relationship {
+identity 6,
+start 10,
+end 4,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 4,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Spark Plug,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+end {
+identity 5,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Coil Pack,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          },
+          relationship {
+identity 7,
+start 10,
+end 5,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 5,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Coil Pack,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+end {
+identity 6,
+labels [
+          Possible_Problem
+        ],
+properties {
+name O2 Sensor,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          },
+          relationship {
+identity 8,
+start 10,
+end 6,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 6,
+labels [
+              Possible_Problem
+            ],
+properties {
+name O2 Sensor,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 10,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+        }
+      },
+end {
+identity 7,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Spark Plug Wire,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 10,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or AF sensor errors
+            }
+          },
+          relationship {
+identity 9,
+start 10,
+end 7,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 7,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Spark Plug Wire,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 11,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap upstream O2 sensors, L&R.  Do misfire locations change banks
+        }
+      },
+end {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+segments [
+        {
+          start {
+identity 11,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap upstream O2 sensors, L&R.  Do misfire locations change banks
+            }
+          },
+          relationship {
+identity 10,
+start 11,
+end 12,
+type No,
+properties {
+name No
+            }
+          },
+          end {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 11,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap upstream O2 sensors, L&R.  Do misfire locations change banks
+        }
+      },
+end {
+identity 6,
+labels [
+          Possible_Problem
+        ],
+properties {
+name O2 Sensor,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 11,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap upstream O2 sensors, L&R.  Do misfire locations change banks
+            }
+          },
+          relationship {
+identity 11,
+start 11,
+end 6,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 6,
+labels [
+              Possible_Problem
+            ],
+properties {
+name O2 Sensor,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+end {
+identity 13,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+        }
+      },
+segments [
+        {
+          start {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          },
+          relationship {
+identity 12,
+start 12,
+end 13,
+type Problem_Moves_to_new_cylinder,
+properties {
+name Problem_Moves_to_new_cylinder
+            }
+          },
+          end {
+identity 13,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+end {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+segments [
+        {
+          start {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          },
+          relationship {
+identity 13,
+start 12,
+end 14,
+type Problem_Stays_to_same_cylinder,
+properties {
+name Problem_Stays_to_same_cylinder
+            }
+          },
+          end {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+end {
+identity 0,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Piston Ring,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          },
+          relationship {
+identity 14,
+start 12,
+end 0,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 0,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Piston Ring,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+end {
+identity 1,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Valvetrain,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          },
+          relationship {
+identity 15,
+start 12,
+end 1,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 1,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Valvetrain,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+end {
+identity 2,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Fuel Injector,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          },
+          relationship {
+identity 16,
+start 12,
+end 2,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 2,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Fuel Injector,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+end {
+identity 4,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Spark Plug,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          },
+          relationship {
+identity 17,
+start 12,
+end 4,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 4,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Spark Plug,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+end {
+identity 5,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Coil Pack,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          },
+          relationship {
+identity 18,
+start 12,
+end 5,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 5,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Coil Pack,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 12,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+        }
+      },
+end {
+identity 7,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Spark Plug Wire,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 12,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Swap both plug + coil with problem cylinder to a good cylinder to isolate problem
+            }
+          },
+          relationship {
+identity 19,
+start 12,
+end 7,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 7,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Spark Plug Wire,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 13,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+        }
+      },
+end {
+identity 4,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Spark Plug,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 13,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+            }
+          },
+          relationship {
+identity 20,
+start 13,
+end 4,
+type Yes,
+properties {
+name Yes
+            }
+          },
+          end {
+identity 4,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Spark Plug,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 13,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+        }
+      },
+end {
+identity 3,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Plug Wire,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 13,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+            }
+          },
+          relationship {
+identity 21,
+start 13,
+end 3,
+type No,
+properties {
+name No
+            }
+          },
+          end {
+identity 3,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Plug Wire,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 13,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+        }
+      },
+end {
+identity 4,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Spark Plug,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 13,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+            }
+          },
+          relationship {
+identity 22,
+start 13,
+end 4,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 4,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Spark Plug,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 13,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+        }
+      },
+end {
+identity 3,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Plug Wire,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 13,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+            }
+          },
+          relationship {
+identity 23,
+start 13,
+end 3,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 3,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Plug Wire,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+end {
+identity 0,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Piston Ring,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          },
+          relationship {
+identity 24,
+start 14,
+end 0,
+type Compression_Poor,
+properties {
+name Compression_Poor
+            }
+          },
+          end {
+identity 0,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Piston Ring,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+end {
+identity 1,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Valvetrain,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          },
+          relationship {
+identity 25,
+start 14,
+end 1,
+type Compression_Poor,
+properties {
+name Compression_Poor
+            }
+          },
+          end {
+identity 1,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Valvetrain,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+end {
+identity 2,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Fuel Injector,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          },
+          relationship {
+identity 26,
+start 14,
+end 2,
+type Compression_Ok,
+properties {
+name Compression_Ok
+            }
+          },
+          end {
+identity 2,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Fuel Injector,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+end {
+identity 5,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Coil Pack,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          },
+          relationship {
+identity 27,
+start 14,
+end 5,
+type Compression_Ok,
+properties {
+name Compression_Ok
+            }
+          },
+          end {
+identity 5,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Coil Pack,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+end {
+identity 8,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Injector Wiring,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          },
+          relationship {
+identity 28,
+start 14,
+end 8,
+type Compression_Ok,
+properties {
+name Compression_Ok
+            }
+          },
+          end {
+identity 8,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Injector Wiring,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+end {
+identity 2,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Fuel Injector,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          },
+          relationship {
+identity 29,
+start 14,
+end 2,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 2,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Fuel Injector,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+end {
+identity 3,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Plug Wire,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          },
+          relationship {
+identity 30,
+start 14,
+end 3,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 3,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Plug Wire,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+end {
+identity 0,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Piston Ring,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          },
+          relationship {
+identity 31,
+start 14,
+end 0,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 0,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Piston Ring,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 14,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+        }
+      },
+end {
+identity 1,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Valvetrain,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 14,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Check cylinder compression for possible mechanical issues
+            }
+          },
+          relationship {
+identity 32,
+start 14,
+end 1,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 1,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Valvetrain,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 33,
+labels [
+          Car
+        ],
+properties {
+Year 2 Gen,
+Model Pilot,
+type Car,
+Name Honda
+        }
+      },
+end {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+segments [
+        {
+          start {
+identity 33,
+labels [
+              Car
+            ],
+properties {
+Year 2 Gen,
+Model Pilot,
+type Car,
+Name Honda
+            }
+          },
+          relationship {
+identity 33,
+start 33,
+end 34,
+type Not_Starting,
+properties {
+name Not_Starting
+            }
+          },
+          end {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 35,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc TDB
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 34,
+start 34,
+end 35,
+type Yes,
+properties {
+name Yes
+            }
+          },
+          end {
+identity 35,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc TDB
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 35,
+start 34,
+end 36,
+type No,
+properties {
+name No
+            }
+          },
+          end {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+end {
+identity 37,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+        }
+      },
+segments [
+        {
+          start {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          },
+          relationship {
+identity 36,
+start 36,
+end 37,
+type Yes,
+properties {
+name Yes
+            }
+          },
+          end {
+identity 37,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+end {
+identity 35,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc TDB
+        }
+      },
+segments [
+        {
+          start {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          },
+          relationship {
+identity 37,
+start 36,
+end 35,
+type No,
+properties {
+name No
+            }
+          },
+          end {
+identity 35,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc TDB
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 37,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+        }
+      },
+end {
+identity 35,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc TDB
+        }
+      },
+segments [
+        {
+          start {
+identity 37,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+            }
+          },
+          relationship {
+identity 38,
+start 37,
+end 35,
+type Yes,
+properties {
+name Yes
+            }
+          },
+          end {
+identity 35,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc TDB
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 37,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+        }
+      },
+end {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+segments [
+        {
+          start {
+identity 37,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+            }
+          },
+          relationship {
+identity 39,
+start 37,
+end 38,
+type No,
+properties {
+name No
+            }
+          },
+          end {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 15,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Starter,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 40,
+start 34,
+end 15,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 15,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Starter,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 16,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Out of Gas,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 41,
+start 34,
+end 16,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 16,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Out of Gas,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 17,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Security Module,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 42,
+start 34,
+end 17,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 17,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Security Module,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 18,
+labels [
+          Possible_Problem
+        ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 43,
+start 34,
+end 18,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 18,
+labels [
+              Possible_Problem
+            ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 19,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Fuel Pump,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 44,
+start 34,
+end 19,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 19,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Fuel Pump,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 20,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 45,
+start 34,
+end 20,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 20,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 21,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed CPS Sensor,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 46,
+start 34,
+end 21,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 21,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed CPS Sensor,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 22,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Engine Computer,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 47,
+start 34,
+end 22,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 22,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Engine Computer,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 23,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 48,
+start 34,
+end 23,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 23,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 24,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed spark plugs,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 49,
+start 34,
+end 24,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 24,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed spark plugs,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 25,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed engine coils,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 50,
+start 34,
+end 25,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 25,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed engine coils,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 26,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Broken EMC fuse,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 51,
+start 34,
+end 26,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 26,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Broken EMC fuse,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 27,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Broken Starter fuse,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 52,
+start 34,
+end 27,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 27,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Broken Starter fuse,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 28,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed head gasket,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 53,
+start 34,
+end 28,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 28,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed head gasket,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 29,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Mass Air Flow Sensor,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 54,
+start 34,
+end 29,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 29,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Mass Air Flow Sensor,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 30,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Plugged Exhaust system,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 55,
+start 34,
+end 30,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 30,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Plugged Exhaust system,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 34,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does it turn Over
+        }
+      },
+end {
+identity 31,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 34,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does it turn Over
+            }
+          },
+          relationship {
+identity 56,
+start 34,
+end 31,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 31,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+end {
+identity 18,
+labels [
+          Possible_Problem
+        ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          },
+          relationship {
+identity 57,
+start 36,
+end 18,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 18,
+labels [
+              Possible_Problem
+            ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+end {
+identity 15,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Starter,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          },
+          relationship {
+identity 58,
+start 36,
+end 15,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 15,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Starter,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+end {
+identity 31,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          },
+          relationship {
+identity 59,
+start 36,
+end 31,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 31,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+end {
+identity 27,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Broken Starter fuse,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          },
+          relationship {
+identity 60,
+start 36,
+end 27,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 27,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Broken Starter fuse,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+end {
+identity 23,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          },
+          relationship {
+identity 61,
+start 36,
+end 23,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 23,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+end {
+identity 20,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          },
+          relationship {
+identity 62,
+start 36,
+end 20,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 20,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 36,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+        }
+      },
+end {
+identity 32,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Other,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 36,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Does the car “click” when the key is turned.
+            }
+          },
+          relationship {
+identity 63,
+start 36,
+end 32,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 32,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Other,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 37,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+        }
+      },
+end {
+identity 18,
+labels [
+          Possible_Problem
+        ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 37,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+            }
+          },
+          relationship {
+identity 64,
+start 37,
+end 18,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 18,
+labels [
+              Possible_Problem
+            ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 37,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+        }
+      },
+end {
+identity 15,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Starter,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 37,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+            }
+          },
+          relationship {
+identity 65,
+start 37,
+end 15,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 15,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Starter,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 37,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+        }
+      },
+end {
+identity 31,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 37,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+            }
+          },
+          relationship {
+identity 66,
+start 37,
+end 31,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 31,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 37,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+        }
+      },
+end {
+identity 23,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 37,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+            }
+          },
+          relationship {
+identity 67,
+start 37,
+end 23,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 23,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 37,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+        }
+      },
+end {
+identity 20,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 37,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+            }
+          },
+          relationship {
+identity 68,
+start 37,
+end 20,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 20,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 37,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+        }
+      },
+end {
+identity 32,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Other,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 37,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Did you attempt to jump start the car or charge the battery
+            }
+          },
+          relationship {
+identity 69,
+start 37,
+end 32,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 32,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Other,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 31,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 70,
+start 38,
+end 31,
+type Zero_to_Two,
+properties {
+name Zero_to_Two
+            }
+          },
+          end {
+identity 31,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 18,
+labels [
+          Possible_Problem
+        ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 71,
+start 38,
+end 18,
+type Zero_to_Two,
+properties {
+name Zero_to_Two
+            }
+          },
+          end {
+identity 18,
+labels [
+              Possible_Problem
+            ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 15,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Starter,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 72,
+start 38,
+end 15,
+type Zero_to_Two,
+properties {
+name Zero_to_Two
+            }
+          },
+          end {
+identity 15,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Starter,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 23,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 73,
+start 38,
+end 23,
+type Zero_to_Two,
+properties {
+name Zero_to_Two
+            }
+          },
+          end {
+identity 23,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 20,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 74,
+start 38,
+end 20,
+type Zero_to_Two,
+properties {
+name Zero_to_Two
+            }
+          },
+          end {
+identity 20,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 32,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Other,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 75,
+start 38,
+end 32,
+type Zero_to_Two,
+properties {
+name Zero_to_Two
+            }
+          },
+          end {
+identity 32,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Other,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 31,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 76,
+start 38,
+end 31,
+type Three_to_Four,
+properties {
+name Three_to_Four
+            }
+          },
+          end {
+identity 31,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 18,
+labels [
+          Possible_Problem
+        ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 77,
+start 38,
+end 18,
+type Three_to_Four,
+properties {
+name Three_to_Four
+            }
+          },
+          end {
+identity 18,
+labels [
+              Possible_Problem
+            ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 15,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Starter,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 78,
+start 38,
+end 15,
+type Three_to_Four,
+properties {
+name Three_to_Four
+            }
+          },
+          end {
+identity 15,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Starter,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 23,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 79,
+start 38,
+end 23,
+type Three_to_Four,
+properties {
+name Three_to_Four
+            }
+          },
+          end {
+identity 23,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 20,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 80,
+start 38,
+end 20,
+type Three_to_Four,
+properties {
+name Three_to_Four
+            }
+          },
+          end {
+identity 20,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 32,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Other,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 81,
+start 38,
+end 32,
+type Three_to_Four,
+properties {
+name Three_to_Four
+            }
+          },
+          end {
+identity 32,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Other,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 31,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 82,
+start 38,
+end 31,
+type Five_Plus,
+properties {
+name Five_Plus
+            }
+          },
+          end {
+identity 31,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 18,
+labels [
+          Possible_Problem
+        ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 83,
+start 38,
+end 18,
+type Five_Plus,
+properties {
+name Five_Plus
+            }
+          },
+          end {
+identity 18,
+labels [
+              Possible_Problem
+            ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 15,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Starter,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 84,
+start 38,
+end 15,
+type Five_Plus,
+properties {
+name Five_Plus
+            }
+          },
+          end {
+identity 15,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Starter,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 23,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 85,
+start 38,
+end 23,
+type Five_Plus,
+properties {
+name Five_Plus
+            }
+          },
+          end {
+identity 23,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 20,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 86,
+start 38,
+end 20,
+type Five_Plus,
+properties {
+name Five_Plus
+            }
+          },
+          end {
+identity 20,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 32,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Other,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 87,
+start 38,
+end 32,
+type Five_Plus,
+properties {
+name Five_Plus
+            }
+          },
+          end {
+identity 32,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Other,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 31,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 88,
+start 38,
+end 31,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 31,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Alternator,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 18,
+labels [
+          Possible_Problem
+        ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 89,
+start 38,
+end 18,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 18,
+labels [
+              Possible_Problem
+            ],
+properties {
+name FailingDead Battery,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 15,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Failed Starter,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 90,
+start 38,
+end 15,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 15,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Failed Starter,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 23,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 91,
+start 38,
+end 23,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 23,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Bad ground strap,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 20,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 92,
+start 38,
+end 20,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 20,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Ceased Engine,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 38,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc How many years old is the battery
+        }
+      },
+end {
+identity 32,
+labels [
+          Possible_Problem
+        ],
+properties {
+name Other,
+type Possible_Problem
+        }
+      },
+segments [
+        {
+          start {
+identity 38,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc How many years old is the battery
+            }
+          },
+          relationship {
+identity 93,
+start 38,
+end 32,
+type Possible_Problem,
+properties {
+name Possible_Problem
+            }
+          },
+          end {
+identity 32,
+labels [
+              Possible_Problem
+            ],
+properties {
+name Other,
+type Possible_Problem
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 40,
+labels [
+          Car
+        ],
+properties {
+Year 2003,
+Model F-150,
+type Car,
+Name Ford
+        }
+      },
+end {
+identity 41,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+        }
+      },
+segments [
+        {
+          start {
+identity 40,
+labels [
+              Car
+            ],
+properties {
+Year 2003,
+Model F-150,
+type Car,
+Name Ford
+            }
+          },
+          relationship {
+identity 94,
+start 40,
+end 41,
+type Spark_Plug_issue,
+properties {
+name Spark_Plug_issue
+            }
+          },
+          end {
+identity 41,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 42,
+labels [
+          Car
+        ],
+properties {
+Year 2003,
+Model F-300,
+type Car,
+Name Ford
+        }
+      },
+end {
+identity 43,
+labels [
+          Problem
+        ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+        }
+      },
+segments [
+        {
+          start {
+identity 42,
+labels [
+              Car
+            ],
+properties {
+Year 2003,
+Model F-300,
+type Car,
+Name Ford
+            }
+          },
+          relationship {
+identity 95,
+start 42,
+end 43,
+type Spark_Plug_issue,
+properties {
+name Spark_Plug_issue
+            }
+          },
+          end {
+identity 43,
+labels [
+              Problem
+            ],
+properties {
+type desc,
+desc Replace spark plug at misfiring cylinder.  Is misfire corrected
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  },
+  {
+    p {
+start {
+identity 44,
+labels [
+          Car
+        ],
+properties {
+Model YHV,
+type Car,
+Name ABCD
+        }
+      },
+end {
+identity 45,
+labels [
+          Problem
+        ],
+properties {
+Desc jbjxbxh jbjbe
+        }
+      },
+segments [
+        {
+          start {
+identity 44,
+labels [
+              Car
+            ],
+properties {
+Model YHV,
+type Car,
+Name ABCD
+            }
+          },
+          relationship {
+identity 96,
+start 44,
+end 45,
+type Related,
+properties {
+name Related
+            }
+          },
+          end {
+identity 45,
+labels [
+              Problem
+            ],
+properties {
+Desc jbjxbxh jbjbe
+            }
+          }
+        }
+      ],
+length 1.0
+    }
+  }
+]

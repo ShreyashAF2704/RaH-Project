@@ -1,0 +1,39 @@
+TSBs
+https://www.carproblemzoo.com/tsb/ford/
+https://www.ford-trucks.com/forums/tsb_recall/tsbs
+https://www.ford-trucks.com/forums/
+https://www.autocodes.com/tsb/
+https://www.tsbsearch.com/Honda/00-002
+
+-------------------------
+
+OBD code ford
+https://www.fordobdcode.com/
+https://www.engine-codes.com
+https://www.totalcardiagnostics.com/support/Knowledgebase/Article/View/21/0/genericmanufacturer-obd2-codes-and-their-meanings#:~:text=Diagnostic%20trouble%20codes%20%28or%20fault%20codes%29%20are%20obd2,the%20normal%2Faccepted%20range%20%28Eg%3A%20fuel%20mixture%20too%20rich%29.
+
+-------------------------
+
+Car recalls and problems 
+https://www.carcarekiosk.com/
+https://www.2carpros.com/
+https://www.youcanic.com/
+
+-------------------------
+Notes 14/12/2022 Wednesday
+
+youtube transcript data extraction
+Parts sales value?
+hanes.com
+mitchell1.com
+
+-------------------------
+
+Tech to learn:-
+
+Neo4j
+pytoneo
+grpc
+rabbitmq
+-------------------------
+

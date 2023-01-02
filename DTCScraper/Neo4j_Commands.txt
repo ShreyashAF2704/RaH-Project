@@ -1,0 +1,256 @@
+To delete all relationship
+match p=()-[r]-() delete r
+
+To delete all nodes
+match (n) delete n
+
+To delete all specific relation ships
+MATCH p=()-[r:misfire]->() Delete p
+
+Get all specific relationships
+MATCH p=()-[r:BATSMAN_OF]->() RETURN p
+
+Get Specific Node
+MATCH (n:misfire_problem) RETURN n
+
+Get Specific Node up to a limit
+MATCH (n:Car) RETURN n LIMIT 25
+
+GRPC
+
+
+Match (n:Car{Name:"Lexus",model:"ES330",year:"2004"}) 
+Create (m:Problem{name:"Multiple Cyl Misfire",desc:"Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or A/F sensor errors"}) 
+Create (n)-[:Misfire]->(m) 
+Create (m)-[r1:Yes]->(k:Problem{name:"Swap Upstream O2 Sensor",desc:"Swap upstream O2 sensors, L&R.  Do misfire locations change banks?"}) 
+Create (m)-[r2:No]->(l:Problem{name:"Swap Plug and Coil",desc:"Swap both plug + coil with problem cylinder to a good cylinder to isolate problem"}) 
+Create (k) -[r3:Yes]->(O:Possible_Problem{desc:"Upstream O2 Sensor"})  
+Create(k)-[r4:No]->(l) 
+Create (l)-[:Problem_New_Cylinder]->(P:Problem{name="Replace Spark Plug",desc:"Replace spark plug at misfiring cylinder.  Is misfire corrected?"}) 
+Create (l)-[:Problem_Same_Cylinder]->(Q:Problem{name="Check Cylinder Compression",desc:"Check cylinder compression for possible mechanical issues"}) 
+Create (P)-[:Yes]-> (R:(S:Possible_Problem{desc:"Spark plug"}) 
+Create (P)-[:No]->(S:Possible_Problem{desc:"Coil Pack"}) 
+Create (Q)-[:Compression_Poor]->(T:Possible_Problem{desc:"Piston rings, Valvetrain"}) 
+Create (Q) -[:Compression_Okay]->(U:Possible_Problem{desc:"Fuel Injector,Coil Wiring,Injector wiring"})
+
+
+
+Toyota 1997 4 Runner Misfire
+
+Create(p1:Possible_Problem{Name:"Piston Ring"})
+Create(p2:Possible_Problem{Name:"Valvetrain"})
+Create(p3:Possible_Problem{Name:"Fuel Injector"})
+Create(p4:Possible_Problem{Name:"Plug Wire"})
+Create(p5:Possible_Problem{Name:"Spark Plug"})
+Create(p6:Possible_problem{Name:"Coil Pack"})
+
+
+Create (a:Car{Name:"Toyota",Model:"4 Runner",Year:"1997"})
+Create (b:Problem{Name:"Misfire on both 1&4, 3&6 or 2&5"})
+
+Create (a) -[:Misfire]->(b)
+
+Create (b)-[:Yes]->(p6)
+Create (b)-[:No]->(d:Problem{Name:"Problem Constant or intermittent"})
+
+Create (d)-[:Constant]->(e:Problem{Name:"Check cylinder compression for possible mechanical issues"})
+Create (d)-[:Intermittent]->(f:Problem{Name:"Swap plug + coil with another cylindero isolate problem"})
+
+Create (e)-[:Compression_OK]->(f)
+Create (e)-[:Compression_Poor]->(p1)
+Create (e)-[:Compression_Poor]->(p2)
+
+Create (f)-[:Problem_Stays_to_same_cylinder]->(p3)
+Create (f)-[:Problem_Stays_to_same_cylinder]->(p4)
+Create (f)-[:Problem_Stays_to_same_cylinder]->(g:Problem{Name:"Is Misfire on 1,3 or 5?"})
+
+
+Create (f)-[:Problem_Moves_to_new_cylinder]->(p5)
+Create (f)-[:Problem_Moves_to_new_cylinder]->(p6)
+Create (f)-[:Problem_Moves_to_new_cylinder]->(h:Problem{Name:"Replace spark plug at misfiring cylinder.  Is misfire corrected?"})
+
+Create (g)-[:Yes]->(p3)
+Create (g)-[:No]->(p3)
+Create (g)-[:No]->(p4)
+Create (g)-[:No]->(i:Problem{Name:"Swap spark plug X-wire from misfiring cylinder and good cylinder, did the misfiring cylinder move?"})
+
+Create (i) -[:No]->(p3)
+Create (i)-[:yes]->(p5)
+
+Create (h)-[:Yes]->(p5)
+Create (h)-[:No]->(p6)
+
+#---------------------------------------------------------
+Lexus ES330 Misfire
+
+Create(p1:Possible_Problem{name:"Piston Ring"})
+Create(p2:Possible_Problem{name:"Valvetrain"})
+Create(p3:Possible_Problem{name:"Fuel Injector"})
+Create(p4:Possible_Problem{name:"Plug Wire"})
+Create(p5:Possible_Problem{name:"Spark Plug"})
+Create(p6:Possible_Problem{name:"Coil Pack"})
+Create(p7:Possible_Problem{name:"O2 Sensor"})
+Create(p8:Possible_Problem{name:"Spark Plug Wire"})
+Create(p9:Possible_Problem{name:"Injector Wiring"})
+
+Create(a_:Car{Name:"Lexus",Model:"ES330",Year:"2004"})
+
+Create(a:Problem{desc:"Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or A/F sensor errors"})
+Create(b:Problem{desc:"Swap upstream O2 sensors, L&R.  Do misfire locations change banks?"})
+Create(c:Problem{desc:"Swap both plug + coil with problem cylinder to a good cylinder to isolate problem"})
+Create(d:Problem{desc:"Replace spark plug at misfiring cylinder.  Is misfire corrected?"})
+Create(e:Problem{desc:"Check cylinder compression for possible mechanical issues"})
+
+Create (a_)-[:Misfire]->(a)
+
+Create (a)-[:Yes]->(b)
+Create (a)-[:No]->(c)
+Create (a)-[:Possible_Problem]->(p1)
+Create (a)-[:Possible_Problem]->(p2)
+Create (a)-[:Possible_Problem]->(p3)
+Create (a)-[:Possible_Problem]->(p5)
+Create (a)-[:Possible_Problem]->(p6)
+Create (a)-[:Possible_Problem]->(p7)
+Create (a)-[:Possible_Problem]->(p8)
+
+
+Create (b)-[:No]->(c)
+Create (b)-[:Possible_Problem]->(p7)
+
+
+Create (c)-[:Problem_Moves_to_new_cylinder]->(d)
+Create (c)-[:Problem_Stays_to_same_cylinder]->(e)
+Create (c)-[:Possible_Problem]->(p1)
+Create (c)-[:Possible_Problem]->(p2)
+Create (c)-[:Possible_Problem]->(p3)
+Create (c)-[:Possible_Problem]->(p5)
+Create (c)-[:Possible_Problem]->(p6)
+Create (c)-[:Possible_Problem]->(p8)
+
+
+Create (d)-[:Yes]->(p5)
+Create (d)-[:No]->(p4)
+Create (d)-[:Possible_Problem]->(p5)
+Create (d)-[:Possible_Problem]->(p4)
+
+Create (e)-[:Compression_Poor]->(p1)
+Create (e)-[:Compression_Poor]->(p2)
+Create (e)-[:Compression_Ok]->(p3)
+Create (e)-[:Compression_Ok]->(p6)
+Create (e)-[:Compression_Ok]->(p9)
+
+Create (e)-[:Possible_Problem]->(p3)
+Create (e)-[:Possible_Problem]->(p4)
+Create (e)-[:Possible_Problem]->(p1)
+Create (e)-[:Possible_Problem]->(p2)
+
+
+
+#-----------------------------------------------------
+Honda Pilot 2nd gen Car wont start
+
+Create(p1:Possible_Problem{name:"Failed Starter"})
+Create(p2:Possible_Problem{name:"Out of Gas"})
+Create(p3:Possible_Problem{name:"Failed Security Module"})
+Create(p4:Possible_Problem{name:"Failing/Dead Battery"})
+Create(p5:Possible_Problem{name:"Failed Fuel Pump"})
+Create(p6:Possible_Problem{name:"Ceased Engine"})
+Create(p7:Possible_Problem{name:"Failed CPS Sensor"})
+Create(p8:Possible_Problem{name:"Failed Engine Computer"})
+Create(p9:Possible_Problem{name:"Bad ground strap"})
+Create(p10:Possible_Problem{name:"Failed spark plugs"})
+Create(p11:Possible_Problem{name:"Failed engine coils"})
+Create(p12:Possible_Problem{name:"Broken EMC fuse"})
+Create(p13:Possible_Problem{name:"Broken Starter fuse"})
+Create(p14:Possible_Problem{name:"Failed head gasket"})
+Create(p15:Possible_Problem{name:"Failed Mass Air Flow Sensor"})
+Create(p16:Possible_Problem{name:"Plugged Exhaust system"})
+Create(p17:Possible_Problem{name:"Failed Alternator"})
+Create(p18:Possible_Problem{name:"Other"})
+
+Create(a:Car{Name:"Honda",Model:"Pilot",Year:"2 Gen"})
+Create(b:Problem{desc:"Does it turn Over?"})
+Create(c:Problem{desc:"TDB"})
+Create(d:Problem{desc:"Does the car “click” when the key is turned."})
+Create(e:Problem{desc:"Did you attempt to jump start the car or charge the battery?"})
+Create(f:Problem{desc:"How many years old is the battery?"})
+
+
+Create (a)-[:Not_Starting]->(b)
+Create (b)-[:Yes]->(c)
+Create (b)-[:No]->(d)
+Create (d)-[:Yes]->(e)
+Create (d)-[:No]->(c)
+Create (e)-[:Yes]->(c)
+Create (e)-[:No]->(f)
+
+
+
+Create (b)-[:Possible_Problem]->(p1)
+Create (b)-[:Possible_Problem]->(p2)
+Create (b)-[:Possible_Problem]->(p3)
+Create (b)-[:Possible_Problem]->(p4)
+Create (b)-[:Possible_Problem]->(p5)
+Create (b)-[:Possible_Problem]->(p6)
+Create (b)-[:Possible_Problem]->(p7)
+Create (b)-[:Possible_Problem]->(p8)
+Create (b)-[:Possible_Problem]->(p9)
+Create (b)-[:Possible_Problem]->(p10)
+Create (b)-[:Possible_Problem]->(p11)
+Create (b)-[:Possible_Problem]->(p12)
+Create (b)-[:Possible_Problem]->(p13)
+Create (b)-[:Possible_Problem]->(p14)
+Create (b)-[:Possible_Problem]->(p15)
+Create (b)-[:Possible_Problem]->(p16)
+Create (b)-[:Possible_Problem]->(p17)
+
+
+Create (d)-[:Possible_Problem]->(p4)
+Create (d)-[:Possible_Problem]->(p1)
+Create (d)-[:Possible_Problem]->(p17)
+Create (d)-[:Possible_Problem]->(p13)
+Create (d)-[:Possible_Problem]->(p9)
+Create (d)-[:Possible_Problem]->(p6)
+Create (d)-[:Possible_Problem]->(p18)
+
+Create (e)-[:Possible_Problem]->(p4)
+Create (e)-[:Possible_Problem]->(p1)
+Create (e)-[:Possible_Problem]->(p17)
+Create (e)-[:Possible_Problem]->(p9)
+Create (e)-[:Possible_Problem]->(p6)
+Create (e)-[:Possible_Problem]->(p18) 
+
+Create (f)-[:Zero_to_Two]->(p17)
+Create (f)-[:Zero_to_Two]->(p4)
+Create (f)-[:Zero_to_Two]->(p1)
+Create (f)-[:Zero_to_Two]->(p9)
+Create (f)-[:Zero_to_Two]->(p6)
+Create (f)-[:Zero_to_Two]->(p18)
+
+Create (f)-[:Three_to_Four]->(p17)
+Create (f)-[:Three_to_Four]->(p4)
+Create (f)-[:Three_to_Four]->(p1)
+Create (f)-[:Three_to_Four]->(p9)
+Create (f)-[:Three_to_Four]->(p6)
+Create (f)-[:Three_to_Four]->(p18)
+
+Create (f)-[:Five_Plus]->(p17)
+Create (f)-[:Five_Plus]->(p4)
+Create (f)-[:Five_Plus]->(p1)
+Create (f)-[:Five_Plus]->(p9)
+Create (f)-[:Five_Plus]->(p6)
+Create (f)-[:Five_Plus]->(p18)
+ 
+Create (f)-[:Possible_Problem]->(p17)
+Create (f)-[:Possible_Problem]->(p4)
+Create (f)-[:Possible_Problem]->(p1)
+Create (f)-[:Possible_Problem]->(p9)
+Create (f)-[:Possible_Problem]->(p6)
+Create (f)-[:Possible_Problem]->(p18)
+
+
+
+
+
+
+

@@ -1,0 +1,14 @@
+#Three Types of Nodes: Car,Problem,Possible_Problem
+#Relation will be between any of two types nodes.
+#an array of an array which contains three objects start,relationship,end.
+
+Relations_arr=
+[
+[{'type': 'Problem', 'desc': 'How many years old is the battery?'}, {'name': 'Possible_Problem'}, {'name': 'Bad ground strap', 'type': 'Possible_Problem'}]
+[{'type': 'Problem', 'desc': 'How many years old is the battery?'}, {'name': 'Possible_Problem'}, {'name': 'Ceased Engine', 'type': 'Possible_Problem'}]
+[{'type': 'Problem', 'desc': 'How many years old is the battery?'}, {'name': 'Possible_Problem'}, {'name': 'Other', 'type': 'Possible_Problem'}]
+[{'Year': '2003', 'Model': 'F-150', 'type': 'Car', 'Name': 'Ford'}, {'name': 'Spark_Plug_issue'}, {'type': 'desc', 'desc': 'Replace spark plug at misfiring cylinder.  Is misfire corrected?'}]
+[{'Year': '2003', 'Model': 'F-300', 'type': 'Car', 'Name': 'Ford'}, {'name': 'Spark_Plug_issue'}, {'type': 'desc', 'desc': 'Replace spark plug at misfiring cylinder.  Is misfire corrected?'}]
+[{'type': 'Problem', 'desc': 'Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or A/F sensor errors'}, {'name': 'Possible_Problem'}, {'name': 'O2 Sensor', 'type': 'Possible_Problem'}]
+[{'type': 'Problem', 'desc': 'Multiple cyl misfires on same bank combined with same bank upstream O2 sensor errors or A/F sensor errors'}, {'name': 'Possible_Problem'}, {'name': 'Spark Plug Wire', 'type': 'Possible_Problem'}]
+]
