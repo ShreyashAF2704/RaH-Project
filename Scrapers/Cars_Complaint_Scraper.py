@@ -6,15 +6,19 @@ import requests
 import json
 
 uri = "https://www.carcomplaints.com/"
+
+#read the webpage and store it as a string
 webpage = urllib.request.urlopen(uri).read()
-#req = requests.get(uri)
+
 soup = BeautifulSoup(webpage,'html.parser')
-print(soup)
+
+#find all the <a> tags which consist of all car name
 section = soup.section.find_all('a')
 
 data_dir = os.getcwd()
 data_dir = os.path.join(data_dir,"Ford Explorer")
 
+#list of all complaints
 ans = []
 count_data = 0
 
@@ -23,19 +27,24 @@ car_dict = {}
 cars = []
 
 
-
+#extract the name and url for each car and stored it in dictionary car_dict
 for i in section:
     car_dict[i.text] = i["href"]
     cars.append(i.text)
 print("level1 completed")
 print(cars)
 
+
+#now loop through the cars list. 
 for i in range(8,9):
     new_uri = uri+cars[i]
     print(new_uri)
+    
+    #"new_uri" will be url for the webpage which consist of all models of a  specific car. 
     page = urllib.request.urlopen(new_uri).read()
     soup2 = BeautifulSoup(page,'html.parser')
     
+    #extract all the model names and urls present in <ul> tag and store it in model_dict dictionary.
     models_div = soup2.div.find_all("ul",class_="column bar")
     model = []
     model_dict = {}
@@ -49,19 +58,14 @@ for i in range(8,9):
             model_dict[li.text] = li["href"]
     print(model_dict)
 
-    '''
-    model = ["Explorer"]
-    model_dict = {}
-    model_dict["Explorer"] = "Ford/Explorer/"
-    
-    '''
     print("level2 completed")
 
     
-   
+    #loop through each model.
     for models in model:
         new_uri2 = uri+model_dict[models]
         print(new_uri2)
+        #this new_uri2 will be new uri for webpage contains all model years. extract and save it in model_year_div
         page2 = urllib.request.urlopen(new_uri2).read()
         soup3 = BeautifulSoup(page2,'html.parser')
 
@@ -74,13 +78,15 @@ for i in range(8,9):
         for li_year in model_year_div.find_all("span",class_="label"):
             print(li_year.text)
             model_year.append(li_year.text)
-
+            
+        
         for c in model_year_div.find_all("span",class_="count"):
             print(c.text)
             count_p.append(c.text)
         
         new_model_year = []
         
+        #remove all the model year where cars complaint count is "0".
         for count_ele in range(len(model_year)):
             co = count_p[count_ele].replace(",","")
             if int(co) != 0:
@@ -88,10 +94,12 @@ for i in range(8,9):
         print(new_model_year)
         print("level3 completed")
 
-        
+
+        #loop through model years
         for year in new_model_year:
             new_uri3 = new_uri2+year+"/"
             print(new_uri3)
+            #new_uri3 will be new uri of webpage for problems extract it and store it in problem_dict.
             page3 = urllib.request.urlopen(new_uri3).read()
             soup4 = BeautifulSoup(page3,'html.parser')
             problem_div = soup4.find("div",id="graph").find_all("li")
@@ -108,9 +116,12 @@ for i in range(8,9):
             print("level4 completed")
             prob_arr = list(problem_dict.keys())
             
+            
+            #loop through each problem.
             for prob in prob_arr:
                 print(problem_dict[prob])
                 new_uri4 = new_uri3+problem_dict[prob]
+                #new_uri4 will be new uri of webpage for sub-problems extract it and store it in sub_problem_dict.
                 print(new_uri4)
                 page4 = urllib.request.urlopen(new_uri4).read()
                 soup5 = BeautifulSoup(page4,'html.parser')
@@ -124,9 +135,12 @@ for i in range(8,9):
                     print(a_tag_sub["href"],"=>",strong_sub.text)
                     sub_problem_dict[strong_sub.text] = a_tag_sub["href"]
                 print("level5 completed")
+                
+                #loop through each sub problem.
                 for sub_prob in list(sub_problem_dict.keys()):
                     new_uri5 = "https://www.carcomplaints.com"+sub_problem_dict[sub_prob]
                     print(new_uri5,"------------")
+                    #new_uri5 will be new uri of webpage for complaints for a subproblem extract it and store it in problem_desc_dict.
                     page5 = urllib.request.urlopen(new_uri5).read()
                     soup6 = BeautifulSoup(page5,'html.parser')
         
@@ -134,6 +148,7 @@ for i in range(8,9):
                     
                     problem_desc_div = soup6.find_all("div",class_="complaint")
                     #print(problem_desc_div)
+                    #loop throght each complaint create a dictionary ans_new and add all info of car make,model,year,problem,.... and append in ans array.
                     for ele in range(len(problem_desc_div)):
                         title = problem_desc_div[ele].find("h3",class_="ptitle").text
                         problem_distance = problem_desc_div[ele].find("div",class_="cheader").find_all("li")
@@ -170,6 +185,7 @@ for i in range(8,9):
                         
                         print("--------------------------------------------------------------")
                         
+                    #append the object in json file after each iteration so that if the program chrashes we won't lose and scraped information.
                     name = "Ford__new_"+str(models)+"_"+str(year)+".json"
                     file = os.path.join(data_dir,name)
                     with open(file, "w") as final:
