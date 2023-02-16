@@ -1,0 +1,60 @@
+Data Schemas required for Post Request.
+
+#Case 1: Only one database is there
+
+--------------------------
+Nodes:
+[
+{
+   "labels":"",
+   "Properties":{
+	"id":""
+	"Name":"",
+ 	"type":"",
+ 	"description":""
+    }
+}
+]
+
+labels represents types of nodes. eg.Car,Model,Problem,Solution
+Properties:
+  Car:  (Id,Name,type)
+  Model : (Id,Name,Model year,type)
+  Problem : (Id,desc,type)
+  Solution : (Id,Name, type)
+--------------------------
+
+Relationship: 
+[
+{
+    "start": Node_id,
+    "end": Node_id,
+    "type": "Problem",
+    "properties": {
+	"relation": "Misfire"
+     }
+},
+]
+
+types represent what kind of relationship does the two nodes have and it leads to
+eg.
+Node1 -> Node2 ==> type of relation
+Car-> Model ==> Model 
+Model->Problem ==> Problem
+Problem->Problem ==> Problem
+Problem->Solution ==> Solution
+
+------------------------------------
+Steps to add new logic tree in database.
+
+1.Create a list of all the nodes with predefine schema.
+2.Iterate through each node check if node present in database.
+ if present:
+    do not add.
+ else:
+    Add the node.
+#Now all the nodes in logics has been added.
+3.Create a list of all relations we have in logic tree.
+4.Iterate through all the relations and add it in database.
+
+

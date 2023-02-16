@@ -1,0 +1,29 @@
+#To add logic tree in database
+Check:
+1.If Car,Make,Model present?
+   => If yes, If any relation with logic tree is there?
+      => If yes, do not add logic tree
+      =>If No, Match Car,Make,Model and store there id  
+  =>If No,Create Car,Make,Model and store the id
+
+
+#Same question for commmon logic tree of different models may be there,so we have to create different nodes for them.
+#for eg. for toyota misfire and lexus misfire, there maybe having same question giving different outcome.
+#but possible_problem node must be common.
+
+
+2.Now we got the id of Car Model(starting point of logic tree) Create furthur:
+There maybe a different logic tree present or may not be. So traverse the tree from car's model node and store all node ids in list.
+node_list = []#empty if car model has no logic tree.
+step1: Read the inputs from xl sheet one by one. (node1,relation,node2)
+step2: Check if node with (props) are present in database.
+      => If Node type == "Possible_Problem"
+           =>If yes, return the id.
+           =>If no,Create the Node and return the id.
+      => Else:
+          => if No, Create the node and return the id.
+          => if yes, Check if the id is in node ids list of that tree.(to check if the node is from same logic tree.)
+                 => if Yes, return that id.
+                 => if No, Create a new node and return the id.
+Step3: Now we got id1,id2 now create a relationship. and add this ids in node id's list.
+Step4: Repeat Step2 and step3.
