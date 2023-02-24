@@ -14,7 +14,6 @@ URI = "bolt://neo4j-nlb-e0ad87a85a310b86.elb.us-east-1.amazonaws.com:7687/"
 Auth = ("neo4j", "dbadmin@123")
 database = "Neo4j"
 
-
 @app.route('/', methods = ['GET', 'POST'])
 def home():
     if(request.method == 'GET'):
@@ -43,11 +42,11 @@ def addLogicTree():
     print([car,model,problem])
     return jsonify({"message":"Uploaded Successfully","success":True,"response":res})
 
-@app.route('/getNext/<int:Node_id>',methods=['GET'])
-def getNext(Node_id):
-    #nodeId = int(request.params["Node_id"])
+@app.route('/getNext',methods=['GET'])
+def getNext():
+    nodeId = request.args.get('id')
     db = Neo4jDB(URI,Auth,database)
-    res = db.getNextProblem(Node_id,"")
+    res = db.getNextProblem(nodeId,"")
     return jsonify(data=res)
    
 @app.route('/logicTree',methods=['GET'])
@@ -57,5 +56,25 @@ def getLogictree() :
     res = db.getLogicTrees(model)
     return jsonify(data=res)
     
+@app.route('/firstQuestion',methods=['GET'])
+def getFirstQuestion():
+    logicTree = request.args.get('problem')
+    model = request.args.get('model')
+    car = request.args.get('car')
+    db = Neo4jDB(URI,Auth,database)
+    data = {}
+    data["Car"] = car
+    data["Model"] = model
+    data["tree"] = logicTree
+    res = db.getLogicTree(data)
+    return jsonify(data=res)
+
+@app.route('/PossibleCause',methods=['GET'])
+def PossibleCause():
+    nodeid = request.args.get('id')
+    db = Neo4jDB(URI,Auth,database)
+    res = db.getPossibleCause(nodeid)
+    return jsonify(data=res)
+
 if __name__ == '__main__':
     app.run(port=3000,debug=True)

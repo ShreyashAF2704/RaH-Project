@@ -31,11 +31,22 @@ class Neo4jDB:
         else:
             result = tx.run("Match (n:Problem) where n.desc=$name return n",name=node["desc"])
             return len([ele["n"] for ele in result])
+            
+    def check_if_relationship_present(self,tx,data):
+        if data[1]["type"] == "Leads_to":
+            res = tx.run("Match (n) where id(n)=$node1 Match (m) where id(m)=$node2 Match p = (n)-[r:"+str(data[1]["type"])+"]->(m) where r.relation=$rel AND r.weight=$weight  return p",node1=data[0],node2=data[2],rel=data[1]["name"],weight=data[1]["weight"])
+            ans = [ele["p"] for ele in res]
+            return len(ans)
+        
+        else:
+            res = tx.run("Match (n) where id(n)=$node1 Match (m) where id(m)=$node2 Match p = (n)-[r:"+str(data[1]["type"])+"]->(m) where r.relation=$rel  return p",node1=data[0],node2=data[2],rel=data[1]["name"])
+            ans = [ele["p"] for ele in res]
+            return len(ans)
         
     def isLogicTreePresent(self,tx,data):
         car = data["Car"]
         model = data["Model"]
-        tree = data["tree"]
+        tree = data["tree"].capitalize()
         
         
         if len([x["id"] for x in tx.run("Match (n:Car) where n.Name=$car return id(n) as id",car=car)]) != 0:
@@ -69,7 +80,8 @@ class Neo4jDB:
         else:
             return None
         
-    def traverse(self,tx,node,l=[]):  
+    def traverse(self,tx,node,l=[]): 
+        l.append(node)
         result = tx.run("Match (n) where id(n)=$ids Match (n)-[r]->(m) return id(m) as id,r.relation as rel",ids=node)
         nodes = [[res["id"],res["rel"]] for res in result]
         if len(nodes) == 0:
@@ -83,7 +95,9 @@ class Neo4jDB:
         
         return l 
 
-
+    def traverse_(self,node):
+        res = self.session.execute_read(self.traverse,node)
+        print(set(res))
 
 
     def add_nodes(self,tx,node):
@@ -114,6 +128,8 @@ class Neo4jDB:
         rel_type = node2["type"]
         relation = node2["name"] 
         
+        
+        
         if "weight" in node2.keys():
             weight = node2["weight"]
             result = tx.run("Match (n) where id(n) = $node1 Match (m) where id(m) = $node3 Create (n)-[r:"+str(rel_type)+"]->(m) SET r.relation=$relation SET r.weight=$weight Return 'Relation Created'",node1=node1,node3=node3,relation=relation,weight=weight) 
@@ -138,8 +154,10 @@ class Neo4jDB:
                 node_set.append(node1)
                 node2 = self.CreateNode(i[2],node_set)
                 node_set.append(node2)
-                #print([node1,i[1],node2])
-                res = self.session.execute_write(self.add_relationship,[node1,i[1],node2])
+                if self.session.execute_read(self.check_if_relationship_present,[node1,i[1],node2]) == 0:
+                    res = self.session.execute_write(self.add_relationship,[node1,i[1],node2])
+                else:
+                    print("Relation already present ",[node1,i[1],node2])
                 #print(res)
             print("Tree Created")
             return "Tree Created Successfully"
@@ -162,9 +180,10 @@ class Neo4jDB:
                 node_set.append(node1)
                 node2 = self.CreateNode(i[2],node_set)
                 node_set.append(node2)
-                #print([node1,i[1],node2])
-                res = self.session.execute_write(self.add_relationship,[node1,i[1],node2])
-                #print(res) 
+                if self.session.execute_read(self.check_if_relationship_present,[node1,i[1],node2]) == 0:
+                    res = self.session.execute_write(self.add_relationship,[node1,i[1],node2])
+                else:
+                    print("Relation already present ",[node1,i[1],node2])
             print("Tree Created")
             return "Tree Created Successfully"            
         else:
@@ -179,7 +198,7 @@ class Neo4jDB:
             return node1
         
         ele = self.session.execute_read(self.getNodeId,node)
-        if node["type"] == "Problem" or node["type"] == "Model":
+        if node["type"] == "Problem":
             for e in ele:
                 if e in node_set:
                     return e
@@ -201,10 +220,11 @@ class Neo4jDB:
         model = []
         all_pp = []
         for index, row in df.iterrows():
-            node1 = row["Node1"].split(":")[0]
-            name1 = row["Node1"].split(":")[1].strip().capitalize()
-            node2 = row["Node2"].split(":")[0]
-            name2 = row["Node2"].split(":")[1].strip().capitalize()
+            node1 = row["Node1"].split(":",1)[0]
+            name1 = row["Node1"].split(":",1)[1].strip().capitalize()
+            node2 = row["Node2"].split(":",1)[0]
+            name2 = row["Node2"].split(":",1)[1].strip().capitalize()
+            
             
             if node1 == "Car" and node2 == "Model":
                 n1 = {}
@@ -377,17 +397,36 @@ class Neo4jDB:
     def getLogicTree_(self,tx,data):
         res = tx.run("Match (n:Model) where n.Name=$model Match (n)-[r]->(m) where r.relation=$rel return id(m) as id,m.type as node_type,m.desc as node_desc,r.relation as rel",model=data["Model"],rel=data["tree"]) 
         ans = [[ele["id"],ele["rel"],ele["node_type"],ele["node_desc"]] for ele in res][0]
-        return {"id":ans[0],"Relation":ans[1],"Question":ans[3]}
+        return {"id":ans[0],"Question":ans[3]}
         
-    def getLogicTree(self):
+    def getLogicTree(self,data):
+        '''
         data = {}
         data["Car"] = "Dodge"
         data["Model"] = "Grand caravan"
         data["tree"] = "No heat from heater"
+        '''
         res = self.session.execute_read(self.isLogicTreePresent,data)
         if res == 0:
             res = self.session.execute_read(self.getLogicTree_,data)
-            print(res)
+            qid = res["id"]
+            res_ = self.getPossibleCause(qid)
+            res["Possible_Problem"] = res_
+            return res
+        else:
+            return {"message":"No Logic Tree Present"}
+    #----------------------------------------
+    
+    #----------------------------------------
+    def getPossibleCause_(self,tx,node_id):
+        res = tx.run("Match (n) where id(n)=$nodeId Match (n)-[r]->(m) where r.relation=$pp return id(m) as id,m.type as node_type,m.name as node_pp,r.relation as rel,r.weight as weight",nodeId=int(node_id),pp="Possible_Problem")
+        return [{"id":ele["id"],"name":ele["node_pp"],"weigth":ele["weight"]} for ele in res]
+        
+        
+    def getPossibleCause(self,nodeid):
+        res = self.session.execute_read(self.getPossibleCause_,nodeid)  
+        return res        
+        
     #----------------------------------------
     def getNextProblem_(self,tx,data):
         node_id = data[0]
@@ -413,56 +452,32 @@ class Neo4jDB:
         ans = {} 
         
         for ele in arr:
-            
-            if ele["Relation"] in ans.keys():
-                e = {}
-                if ele["Type"] == "Possible_Problem":
-                    e["weight"] = ele["weight"]
-                e["Node"] = ele["Node"]
-                e["id"] = ele["id"]
-                e["Type"] = ele["Type"]
-                ans[ele["Relation"]].append(e)
-            else:
-                ans[ele["Relation"]] = []
-                e = {}
-                if ele["Type"] == "Possible_Problem":
-                    e["weight"] = ele["weight"]
-                e["Node"] = ele["Node"]
-                e["id"] = ele["id"]
-                e["Type"] = ele["Type"]
-                ans[ele["Relation"]].append(e)
-                
+            if ele["Relation"] != "Possible_Problem":    
+                if ele["Relation"] in ans.keys():
+                    e = {}
+                    if ele["Type"] == "Possible_Problem":
+                        e["weight"] = ele["weight"]
+                    e["Node"] = ele["Node"]
+                    e["id"] = ele["id"]
+                    e["Type"] = ele["Type"]
+                    ans[ele["Relation"]].append(e)
+                else:
+                    ans[ele["Relation"]] = []
+                    e = {}
+                    if ele["Type"] == "Possible_Problem":
+                        e["weight"] = ele["weight"]
+                    e["Node"] = ele["Node"]
+                    e["id"] = ele["id"]
+                    e["Type"] = ele["Type"]
+                    ans[ele["Relation"]].append(e)
+               
         
-            
-        '''        
-        ans2 = {}
-        #print(ans["Possible_Problem"])
-        if "Possible_Problem" in ans.keys():
-            pp_dict = {}
-            for ele in ans["Possible_Problem"]:
-                pp_dict[ele["Node"]]=ele["weight"]
-                
-            ans2["Result"] = pp_dict
-        else:
-            ans2["Result"] = {}
-        print(ans2)
-        if rel in ans.keys():
-            pp = {}
-            q = []
-            for i in ans[rel]:
-                if i["Type"] == "Possible_Problem":
-                    pp[i["Node"]]= i["weight"]
-                if i["Type"] == "Problem":
-                    q.append({"id":i["id"],"Question":i["Node"]})
-            if len(pp.keys()) > 0:
-                ans2["Result"] = pp
-            ans2["Question"] = q
-        '''   
         for k,v in ans.items():
+           
             ele = {}
+            
             for e in v:
-                
-                
+          
                 #pp
                 if e["Type"] == "Possible_Problem":
                     #print(ele,"Possible_Problem" in ele.keys())
