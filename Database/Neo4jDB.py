@@ -520,7 +520,22 @@ class Neo4jDB:
         res = self.session.execute_read(self.getLogicTrees_,model)
         return res
         
+    def get_all_car_make(self,tx):
+        res = tx.run("Match (n:Car) return n.Name as Name")
+        ans = [ele["Name"] for ele in res]
+        return ans
+    def Cars(self):
+        res = self.session.execute_read(self.get_all_car_make)
+        return res 
         
+    def get_models_for_carMake(self,tx,make):
+        res = tx.run("Match (n:Car) where n.Name=$make Match (n)-[:Model]->(m) return m.Name as Name",make=make)
+        ans = [ele["Name"] for ele in res]
+        return ans
+        
+    def getModel(self,make):
+        res = self.session.execute_read(self.get_models_for_carMake,make)
+        return res
         
         
 

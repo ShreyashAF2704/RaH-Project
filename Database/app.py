@@ -10,9 +10,16 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
+
 URI = "bolt://neo4j-nlb-e0ad87a85a310b86.elb.us-east-1.amazonaws.com:7687/"
 Auth = ("neo4j", "dbadmin@123")
 database = "Neo4j"
+
+'''
+URI = "bolt://localhost:7687/"
+Auth = ("shreyash", "1234")
+database = "rahdemo"
+'''
 
 @app.route('/', methods = ['GET', 'POST'])
 def home():
@@ -75,6 +82,20 @@ def PossibleCause():
     db = Neo4jDB(URI,Auth,database)
     res = db.getPossibleCause(nodeid)
     return jsonify(data=res)
+    
+@app.route('/Cars',methods=['GET'])
+def getCars():
+    db = Neo4jDB(URI,Auth,database)
+    res = db.Cars()
+    return jsonify(data=res)
+    
+@app.route('/Model',methods=['GET'])
+def getModel():
+    make = request.args.get('make')
+    db = Neo4jDB(URI,Auth,database)
+    res = db.getModel(make)
+    return jsonify(data=res)
+
 
 if __name__ == '__main__':
     app.run(port=3000,debug=True)
