@@ -420,7 +420,11 @@ class Neo4jDB:
     #----------------------------------------
     def getPossibleCause_(self,tx,node_id):
         res = tx.run("Match (n) where id(n)=$nodeId Match (n)-[r]->(m) where r.relation=$pp return id(m) as id,m.type as node_type,m.name as node_pp,r.relation as rel,r.weight as weight",nodeId=int(node_id),pp="Possible_Problem")
-        return [{"id":ele["id"],"name":ele["node_pp"],"weigth":ele["weight"]} for ele in res]
+        arr = [{"id":ele["id"],"name":ele["node_pp"],"weight":ele["weight"]} for ele in res]
+        ans = {}
+        for i in arr:
+            ans[i["name"]] = i["weight"]
+        return ans
         
         
     def getPossibleCause(self,nodeid):
@@ -452,6 +456,7 @@ class Neo4jDB:
         ans = {} 
         
         for ele in arr:
+            
             if ele["Relation"] != "Possible_Problem":    
                 if ele["Relation"] in ans.keys():
                     e = {}
@@ -471,7 +476,7 @@ class Neo4jDB:
                     e["Type"] = ele["Type"]
                     ans[ele["Relation"]].append(e)
                
-        
+        print(ans)
         for k,v in ans.items():
            
             ele = {}
@@ -495,7 +500,15 @@ class Neo4jDB:
             #print("---------")
             ans[k] = ele
                 
-                
+        print(ans)
+        for k,v in ans.items():
+            for key,value in v.items():
+                ele = {}
+                if key == "Possible_Problem":
+                    for e in value:
+                        ele[e["Name"]] = e["Weigth"]
+                    v[key] = ele
+        
         return ans
      
     def getLogicTrees_(self,tx,model):
