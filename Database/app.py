@@ -10,7 +10,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 Session(app)
 
-
+'''
 URI = "bolt://neo4j-nlb-e0ad87a85a310b86.elb.us-east-1.amazonaws.com:7687/"
 Auth = ("neo4j", "dbadmin@123")
 database = "Neo4j"
@@ -18,8 +18,8 @@ database = "Neo4j"
 '''
 URI = "bolt://localhost:7687/"
 Auth = ("shreyash", "1234")
-database = "rahdemo"
-'''
+database = "rah"
+
 
 @app.route('/', methods = ['GET', 'POST'])
 def home():

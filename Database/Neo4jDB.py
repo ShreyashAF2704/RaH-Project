@@ -168,9 +168,9 @@ class Neo4jDB:
             model["Name"] = Model["Model"]
             
             node = self.session.execute_read(self.getNodeId,model)
-            node_set = self.session.execute_read(self.traverse,node[0])
-            if node_set is None:
-                node_set = []
+            #node_set = self.session.execute_read(self.traverse,node[0])
+            #if node_set is None:
+            node_set = []
             
             #print("set:",node_set)
             node1,node2 = None,None
@@ -198,11 +198,12 @@ class Neo4jDB:
             return node1
         
         ele = self.session.execute_read(self.getNodeId,node)
+        print(ele,node)
         if node["type"] == "Problem":
             for e in ele:
                 if e in node_set:
                     return e
-                    
+            
             node1 = self.session.execute_write(self.add_nodes,node)
             return node1
         
