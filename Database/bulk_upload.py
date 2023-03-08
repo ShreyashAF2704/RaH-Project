@@ -18,7 +18,7 @@ path2 = "Combined Finalize logic tree"
 path1 = "Finalize logic tree"
 
 dir_ = os.getcwd()
-path = os.path.join(dir_,path1)
+path = os.path.join(dir_,path2)
 files = os.listdir(path)
 files = sorted(files)
 db = Neo4jDB(URI,Auth,database)
